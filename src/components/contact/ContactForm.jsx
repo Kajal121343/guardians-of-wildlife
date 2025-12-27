@@ -14,7 +14,6 @@ const ContactForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Save locally if no backend
     const savedQueries = JSON.parse(localStorage.getItem("queries")) || [];
     savedQueries.push(formData);
     localStorage.setItem("queries", JSON.stringify(savedQueries));
@@ -35,7 +34,7 @@ const ContactForm = () => {
         value={formData.name}
         onChange={handleChange}
         required
-        className="border p-2 w-full mb-3 rounded"
+        className="border p-2 w-full mb-3 rounded bg-black text-white placeholder-gray-400"
       />
       <input
         type="email"
@@ -44,7 +43,7 @@ const ContactForm = () => {
         value={formData.email}
         onChange={handleChange}
         required
-        className="border p-2 w-full mb-3 rounded"
+        className="border p-2 w-full mb-3 rounded bg-black text-white placeholder-gray-400"
       />
       <input
         type="text"
@@ -53,7 +52,7 @@ const ContactForm = () => {
         value={formData.subject}
         onChange={handleChange}
         required
-        className="border p-2 w-full mb-3 rounded"
+        className="border p-2 w-full mb-3 rounded bg-black text-white placeholder-gray-400"
       />
       <textarea
         name="message"
@@ -61,7 +60,7 @@ const ContactForm = () => {
         value={formData.message}
         onChange={handleChange}
         required
-        className="border p-2 w-full mb-3 rounded h-24"
+        className="border p-2 w-full mb-3 rounded h-24 bg-black text-white placeholder-gray-400"
       ></textarea>
       <button
         type="submit"
